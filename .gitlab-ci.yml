@@ -1,0 +1,76 @@
+#
+#  GitLab CI configuration file for fortran-googletest repo
+#
+#  J. Morris
+#
+#  UKAEA
+#  31/07/19
+#
+#-----------------------------------------------------
+
+# List of stages
+stages:
+  - build
+  - testing
+  - code-standards
+
+before_script:
+  - export LOGNAME=root
+  - source /etc/profile.d/modules.sh
+  - module use /usr/local/modules/default
+  - module unload python
+  - module load python/3.5.1
+  - module unload ifort 
+  - module load gfortran
+  - export GTEST=/home/PROCESS/testing_frameworks/googletest/googletest
+  - echo ld_library_path=$LD_LIBRARY_PATH
+
+# Build stage 
+#------------
+
+make:
+ only:
+  - master
+  - /^issue-.*$/
+ stage: build
+ script:
+  - cmake3 -H. -Bbuild
+  - cmake3 --build build
+ artifacts:
+   expire_in: 2 hrs
+   paths:
+     - bin/*
+    #  - bin/libfortran-googletest.so
+ tags:
+  - freia
+
+# Testing stage 
+#--------------
+
+unit-tests:
+ when: on_success  # Also default setting
+ only:
+  - master
+  - /^issue-.*$/
+ stage: testing
+ script:
+  - pwd
+  - ls bin/
+  - ./bin/GTest.exe
+ tags:
+  - freia
+
+# Coding standards stage 
+#-----------------------
+
+line-length:
+ when: on_success  # Also default setting
+ only:
+  - master
+  - /^issue-.*$/
+ stage: code-standards
+ script:
+  - pwd
+  - python src/python/line_length_standard.py
+ tags:
+  - freia
