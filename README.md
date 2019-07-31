@@ -1,21 +1,11 @@
-[![pipeline status](https://git.ccfe.ac.uk/morrisj/fortran-googletest/badges/master/pipeline.svg)](https://git.ccfe.ac.uk/morrisj/fortran-googletest/commits/master)
-
 # Fortran Googletest
 
-Example of google test for Fortran code and usage of tests in GitLab CI system
+Example of google test for Fortran code
 
 ## Requirements
 
 The code requires an installation of Googletest. See below for platform 
 dependent options.
-
-### Freia
-
-In your `.bashrc` on Freia add the following environment path
-
-```bash
-GTEST=/home/PROCESS/testing_frameworks/googletest/googletest
-```
 
 ### Mac OSX
 
@@ -74,8 +64,7 @@ cmake -H. -Bbuild
 cmake --build build
 ```
 
-For Freia replace `cmake` with `cmake3` above. This will create a file 
-in `bin/` as below:
+This will create a file in `bin/` as below:
 
 ```bash
 ./bin/GTest.exe
@@ -300,23 +289,6 @@ EXPECT_NEAR(b, a, tolerance);
 ```
 
 Where tolerance is a `real`.
-
-## GitLab CI Config
-
-CI pipeline containts following stages
-
-```YAML
-stages:
-  - build
-  - testing
-  - code-standards
-```
-
-There is one test per stage:
-- `build:make`
-- `testing:unit-tests`
-- `code-standards:line-length`
-
 
 ## Contact
 
