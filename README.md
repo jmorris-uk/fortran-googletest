@@ -1,6 +1,6 @@
 # Fortran Googletest
 
-Example of google test for Fortran code
+Example of googletest for Fortran code
 
 ## Requirements
 
@@ -97,13 +97,7 @@ The output should look like:
 
 This will outline the procedure for adding a new basic test. The Fortran 
 function to be added is one that calculates the binomial coefficient for a 
-given n, k.
-
-```math
-\binom{n}{k} = \frac{n!}{k!(n-k)!}
-```
-
-This function is defined in `myLib_module.f90` as
+given n, k. This function is defined in `myLib_module.f90` as
 
 ```fortran
 real(kind=dp)  function binomial(n,k) result(coefficient) &
@@ -129,7 +123,7 @@ end function binomial
 
 The function takes two arguments `n` and `k` and returns a result, 
 `coefficient`. The `bind` keyword provides a link between the C++ 
-Googletest framework and the Fortran. The `name` is the name that the 
+googletest framework and the Fortran. The `name` is the name that the 
 function will be referred to from the C++. The changes required to the files 
 for this example are as follows.
 
@@ -197,14 +191,8 @@ The last part of the test performs the check against the expected value
 EXPECT_EQ(1.0, c);
 ```
 
-This asserts that we expect the outcome
-
-```math
-\binom{1}{1} = 1
-```
-
-It will report a failure otherwise. A failure in any test case will count as 
-a failed CI pipeline.
+This asserts that we expect the outcome binomial(1,1) == 1. It will report a 
+failure otherwise.
 
 ### test_functions.h
 
@@ -228,7 +216,7 @@ The final line
 double myLib_binomial(int *, int *);
 ```
 
-Tells the Googletest C++ framework about the binomial function, referring to 
+Tells the googletest C++ framework about the binomial function, referring to 
 the `bind` name that was given. It also tells the framework what arguments 
 to expect (to integer pointers) and what value the function returns 
 (`double`). If the subroutine didn't return a value one would declare is 
