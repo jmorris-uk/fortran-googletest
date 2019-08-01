@@ -4,30 +4,28 @@ Example of googletest for Fortran code
 
 ## Requirements
 
-The code requires an installation of Googletest. See below for platform 
+The code requires an installation of googletest. See below for platform 
 dependent options.
 
 ### Mac OSX
 
 ```
-git clone repohttps://github.com/google/googletest
+git clone https://github.com/google/googletest
 cd googletest
 mkdir install
 cd install
 cmake -DCMAKE_CXX_COMPILER="c++" -DCMAKE_CXX_FLAGS="-std=c++11 -stdlib=libc++" ../  
-```
-
-Make the code
-
-```bash
 make
 sudo make install
+cd ../googletest
+mkdir lib
+cp ../install/lib/*.a lib
 ```
 
 Set the environment path in `.bash_profile`
 
 ```bash
-export GTEST=<path_to_googletest_folder>/googletest/googletest/lib/
+export GTEST=<path_to_googletest_folder>/googletest/googletest/
 ```
 
 ### Ubuntu
@@ -164,7 +162,7 @@ TEST(myLib, binomial_1) {
 ```
 
 The first statement defines which group of tests the test `binomial_1` belongs 
-to (`myLib`). We then declare in C++ the two arguments required for 
+to (`myLib`). Then declare in C++ the two arguments required for 
 the function, `n` and `k`.
 
 ```c++
@@ -191,7 +189,7 @@ The last part of the test performs the check against the expected value
 EXPECT_EQ(1.0, c);
 ```
 
-This asserts that we expect the outcome binomial(1,1) == 1. It will report a 
+This asserts the expected outcome binomial(1,1) == 1. It will report a 
 failure otherwise.
 
 ### test_functions.h
