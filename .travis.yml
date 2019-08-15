@@ -17,9 +17,7 @@ before_install:
   - sudo cp *.a lib/
 
 script:
-  - cd 
-  - pwd
-  - ls
+  - cd /home/travis/build/jmorris-uk/fortran-googletest
   - cmake -H. -Bbuild
   - cmake --build build
   - ./bin/GTest.exe
