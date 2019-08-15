@@ -1,0 +1,20 @@
+os: ubuntu
+
+branches:
+  only:
+    - master
+  
+language: c
+sudo: required
+before_install:
+  - sudo apt-get install gfortran cmake libgtest-dev
+  - cd /usr/src/gtest
+  - sudo cmake CMakeLists.txt
+  - sudo make
+  - mkdir lib/
+  - sudo cp *.a lib/
+
+script:
+  - cmake -H. -Bbuild
+  - cmake --build build
+  - ./bin/GTest.exe
