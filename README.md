@@ -50,7 +50,7 @@ sudo cp *.a lib/
 Set the environment path in your `.bashrc` file
 
 ```bash
-export GTEST=/usr/src/gtest/lib/
+export GTEST=/usr/src/gtest/
 ```
 
 ## Building
