@@ -7,6 +7,8 @@ branches:
 language: c
 sudo: required
 before_install:
+  - pwd
+  - ls
   - sudo apt-get install gfortran cmake libgtest-dev
   - cd /usr/src/gtest
   - sudo cmake CMakeLists.txt
@@ -15,7 +17,7 @@ before_install:
   - sudo cp *.a lib/
 
 script:
-  - cd ~
+  - cd 
   - pwd
   - ls
   - cmake -H. -Bbuild
