@@ -23,7 +23,7 @@ steps:
     sudo mkdir lib/
     sudo cp *.a lib/
     export GTEST=/usr/src/gtest/
-    cd ~/work/
+    cd ~/work/1/
     ls
     pwd
     cmake -H. -Bbuild
