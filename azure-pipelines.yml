@@ -24,6 +24,8 @@ steps:
     sudo cp *.a lib/
     export GTEST=/usr/src/gtest/
     cd ~
+    ls
+    pwd
     cmake -H. -Bbuild
     cmake --build build
     ./bin/GTest.exe
