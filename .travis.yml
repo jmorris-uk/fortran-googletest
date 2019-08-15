@@ -15,7 +15,7 @@ before_install:
   - sudo make
   - sudo mkdir lib/
   - sudo cp *.a lib/
-  - export GTEST=/usr/src/gtest/lib/
+  - export GTEST=/usr/src/gtest/
 
 script:
   - cd /home/travis/build/jmorris-uk/fortran-googletest
