@@ -14,13 +14,13 @@ jobs:
     - name: Run a multi-line script
       run: |
         sudo apt-get install -y libgtest-dev
-        sduo apt-get install -y cmake
+        sudo apt-get install -y cmake
         cd /usr/src/gtest
         cmake CMakeLists.txt
         make
-        mkdir lib/
-        cp *.a lib/
+        sudo mkdir lib/
+        sudo cp *.a lib/
         export GTEST=/usr/src/gtest/
-        cmake -H. -Bbuild
-        cmake --build build
+        sudo cmake -H. -Bbuild
+        sudo cmake --build build
         ./bin/GTest.exe
