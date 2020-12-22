@@ -4,40 +4,14 @@ Example of googletest for Fortran code
 
 ## Requirements
 
-The code requires an installation of googletest. See below for platform 
-dependent options.
-
-### Mac OSX
-
-```
-git clone https://github.com/google/googletest
-cd googletest
-mkdir install
-cd install
-cmake -DCMAKE_CXX_COMPILER="c++" -DCMAKE_CXX_FLAGS="-std=c++11 -stdlib=libc++" ../  
-make
-sudo make install
-cd ../googletest
-mkdir lib
-cp ../install/lib/*.a lib
-```
-
-Set the environment path in `.bash_profile`
-
-```bash
-export GTEST=<path_to_googletest_folder>/googletest/googletest/
-```
-
-### Ubuntu
-
-Packages required
+The code requires an installation of googletest.
 
 ```bash
 sudo apt-get install libgtest-dev
 sudo apt-get install cmake
 ```
 
-Googletest still needs to be compiled
+Googletest still needs to be compiled and installed.
 
 ```bash
 cd /usr/src/gtest
