@@ -43,14 +43,7 @@ Googletest still needs to be compiled
 cd /usr/src/gtest
 sudo cmake CMakeLists.txt
 sudo make
-mkdir lib/
-sudo cp *.a lib/
-```
-
-Set the environment path in your `.bashrc` file
-
-```bash
-export GTEST=/usr/src/gtest/
+sudo make install
 ```
 
 ## Building
