@@ -13,8 +13,8 @@ jobs:
       run: echo Hello, world!
     - name: Run a multi-line script
       run: |
-        sudo apt-get install -y libgtest-dev gfortran g++
-        sudo apt-get install -y cmake
+        sudo apt-get update -y
+        sudo apt-get install -y libgtest-dev gfortran g++ cmake
         cd /usr/src/gtest
         cmake CMakeLists.txt
         make
