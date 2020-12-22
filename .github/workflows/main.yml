@@ -15,7 +15,7 @@ jobs:
       run: |
         pwd
         sudo apt-get update -y
-        sudo apt-get install -y libgtest-dev gfortran g++ cmake
+        sudo apt-get install -y libgtest-dev gfortran g++ cmake libblas-dev liblapack-dev
         cd /usr/src/gtest
         sudo cmake CMakeLists.txt
         sudo make
