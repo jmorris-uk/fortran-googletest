@@ -19,7 +19,7 @@ jobs:
         cd /usr/src/gtest
         sudo cmake CMakeLists.txt
         sudo make
-        mkdir lib
+        sudo mkdir lib
         sudo cp *.a lib
         export GTEST=/usr/src/gtest/
         cd /home/runner/work/fortran-googletest/fortran-googletest
