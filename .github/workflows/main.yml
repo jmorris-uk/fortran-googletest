@@ -13,6 +13,7 @@ jobs:
       run: echo Hello, world!
     - name: Run a multi-line script
       run: |
+        pwd
         sudo apt-get update -y
         sudo apt-get install -y libgtest-dev gfortran g++ cmake
         cd /usr/src/gtest
@@ -23,5 +24,7 @@ jobs:
         export GTEST=/usr/src/gtest/
         sudo cmake -H. -Bbuild
         sudo cmake --build build
+        ls
+        pwd
         cd build
         ./bin/GTest.exe
