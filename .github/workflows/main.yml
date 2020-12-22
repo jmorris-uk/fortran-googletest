@@ -16,8 +16,8 @@ jobs:
         sudo apt-get update -y
         sudo apt-get install -y libgtest-dev gfortran g++ cmake
         cd /usr/src/gtest
-        cmake CMakeLists.txt
-        make
+        sudo cmake CMakeLists.txt
+        sudo make
         sudo mkdir lib/
         sudo cp *.a lib/
         export GTEST=/usr/src/gtest/
