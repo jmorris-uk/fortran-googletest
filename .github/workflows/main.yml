@@ -23,4 +23,5 @@ jobs:
         export GTEST=/usr/src/gtest/
         sudo cmake -H. -Bbuild
         sudo cmake --build build
+        cd build
         ./bin/GTest.exe
