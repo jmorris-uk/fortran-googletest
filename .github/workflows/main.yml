@@ -22,9 +22,10 @@ jobs:
         sudo mkdir lib/
         sudo cp *.a lib/
         export GTEST=/usr/src/gtest/
-        sudo cmake -H. -Bbuild
-        sudo cmake --build build
+        cd /home/runner/work/fortran-googletest/fortran-googletest
         ls
         pwd
+        sudo cmake -H. -Bbuild
+        sudo cmake --build build
         cd build
         ./bin/GTest.exe
