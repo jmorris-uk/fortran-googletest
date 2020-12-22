@@ -19,9 +19,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_FLAGS  -std=c++11)
 
 # Setup GoogleTest options
-set(GTEST_LIBRARY $ENV{GTEST})
-# set(GTEST_INCLUDE_DIR $ENV{GTEST}/include)
-# include_directories(${GTEST_INCLUDE_DIR})
+set(GTEST_LIBRARY $ENV{GTEST}/lib)
 set(GTEST_MAIN_LIBRARY $ENV{GTEST})
 
 # Choose gfortran as compiler

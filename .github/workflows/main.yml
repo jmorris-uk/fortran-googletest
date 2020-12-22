@@ -19,9 +19,9 @@ jobs:
         cd /usr/src/gtest
         sudo cmake CMakeLists.txt
         sudo make
-        # copy or symlink libgtest.a and libgtest_main.a to your /usr/lib folder
-        sudo cp *.a /usr/lib
-        export GTEST=/usr/lib/
+        mkdir lib
+        sudo cp *.a lib
+        export GTEST=/usr/src/gtest/
         cd /home/runner/work/fortran-googletest/fortran-googletest
         ls
         pwd
