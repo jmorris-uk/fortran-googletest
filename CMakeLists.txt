@@ -19,8 +19,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_FLAGS  -std=c++11)
 
 # Setup GoogleTest options
-set(GTEST_LIBRARY $ENV{GTEST}/lib)
-set(GTEST_MAIN_LIBRARY $ENV{GTEST})
+# set(GTEST_LIBRARY $ENV{GTEST}/lib)
+# set(GTEST_MAIN_LIBRARY $ENV{GTEST})
 
 # Choose gfortran as compiler
 set(CMAKE_Fortran_Compiler gfortran)
@@ -71,4 +71,4 @@ set_target_properties(fortran-googletest PROPERTIES LINKER_LANGUAGE Fortran)
 add_executable(GTest.exe ${GTEST_DIR}/main.cpp)
 target_link_libraries(GTest.exe fortran-googletest)
 target_link_libraries(GTest.exe lapack)
-target_link_libraries(GTest.exe $ENV{GTEST}/lib/libgtest.a pthread)
+target_link_libraries(GTest.exe gtest gtest_main pthread)
