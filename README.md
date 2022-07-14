@@ -4,11 +4,11 @@ Example of googletest for Fortran code
 
 ## Requirements
 
-The code requires an installation of googletest.
+The code requires an installation of googletest, cmake and lapack.
 
 ```bash
-sudo apt-get install libgtest-dev
-sudo apt-get install cmake
+sudo apt-get install -y libgtest-dev cmake liblapack-dev
+
 ```
 
 Googletest still needs to be compiled and installed.
@@ -17,7 +17,6 @@ Googletest still needs to be compiled and installed.
 cd /usr/src/gtest
 sudo cmake CMakeLists.txt
 sudo make
-sudo make install
 ```
 
 ## Building
