@@ -245,4 +245,4 @@ Where tolerance is a `real`.
 
 ## Contact
 
-[James Morris](james.morris2@ukaea.uk)
+[James Morris](morrisj@protonmail.com)
