@@ -1,7 +1,6 @@
 
 #  CMake file for GoogleTest example repo
 #
-#  UKAEA
 #  J. Morris
 #  31/07/19
 #
