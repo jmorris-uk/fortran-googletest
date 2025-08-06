@@ -13,7 +13,7 @@ jobs:
       run: |
         pwd
         sudo apt-get update -y
-        sudo apt satisfy "cmake (> 3.10)"
+        sudo apt satisfy "cmake (>> 3.10)"
         sudo apt-get install -y libgtest-dev gfortran g++ libblas-dev liblapack-dev
         cd /usr/src/gtest
         sudo cmake CMakeLists.txt
