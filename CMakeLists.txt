@@ -6,16 +6,16 @@
 #
 
 # Specify the minimum version for CMake
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.10)
 
 # Specify CMake root location
 include(${CMAKE_ROOT}/Modules/CMakeDetermineCompiler.cmake)
 include(${CMAKE_ROOT}/Modules/ExternalProject.cmake)
 
 # Set CMake stadard to be 11
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_FLAGS  -std=c++11)
+set(CMAKE_CXX_FLAGS  -std=c++14)
 
 # Setup GoogleTest options
 # set(GTEST_LIBRARY $ENV{GTEST}/lib)
